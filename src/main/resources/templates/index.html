@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css"/>
+
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background: url('https://secureservercdn.net/160.153.137.19/c64.b8f.myftpupload.com/wp-content/uploads/2019/01/AdobeStock_64371421-1.jpeg');
+            background-size: cover;
+        }
+
+        .wrapper-define {
+            margin-top: 200px;
+        }
+    </style>
+
+    <title>Test</title>
+</head>
+<body>
+<!--<nav class="navbar navbar-inverse">-->
+<!--    <div class="container">-->
+<!--        <div class="navbar-header">-->
+<!--            <a class="navbar-brand" href="#">Spring Boot</a>-->
+<!--        </div>-->
+<!--        <div id="navbar" class="collapse navbar-collapse">-->
+<!--            <ul class="nav navbar-nav">-->
+<!--                <li class="active"><a href="#">首页</a></li>-->
+<!--                <li><a href="#about">关于</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<div class="container-fluid">
+    <div class="wrapper-define">
+        <div class="row">
+            <div class="col-md-9 col-md-offset-1">
+                <input type="text" class="form-control" placeholder="搜索文章">、
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-default"> 搜 索</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
