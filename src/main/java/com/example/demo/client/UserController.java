@@ -11,4 +11,19 @@ public class UserController {
     public ModelAndView doIndex(){
         return new ModelAndView("/index");
     }
+
+    @RequestMapping("/about")
+    public ModelAndView doAbout(){
+        return new ModelAndView("/index-about");
+    }
+
+    @RequestMapping("/archives")
+    public ModelAndView doArchives(){
+        return new ModelAndView("/index-archives");
+    }
+
+    @RequestMapping("/category")
+    public ModelAndView doCategory(){
+        return new ModelAndView("/index-category");
+    }
 }
