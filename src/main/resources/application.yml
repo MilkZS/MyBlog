@@ -1,16 +1,17 @@
-spring:
-  thymeleaf:
-    cache: false
-#    prefix: classpath:/views/
-    suffix: .html
-    mode: HTML5
-    encoding: UTF-8
-    servlet:
-      content-type: text/html
 server:
   port: 9900
   servlet:
     session:
       timeout: 10
   tomcat:
-    uri-encoding: UTF-8
+      uri-encoding: UTF-8
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+#    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+

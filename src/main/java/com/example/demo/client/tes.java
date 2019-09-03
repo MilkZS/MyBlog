@@ -1,8 +1,8 @@
 package com.example.demo.client;
 
 
-import com.milkz.util.MarkDown2HtmlWrapper;
-import com.milkz.util.MarkdownEntity;
+import com.example.demo.util.MarkDown2HtmlWrapper;
+import com.example.demo.util.MarkdownEntity;
 
 import java.io.IOException;
 
