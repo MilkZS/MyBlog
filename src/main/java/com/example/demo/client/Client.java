@@ -13,12 +13,10 @@ import java.util.HashMap;
 public class Client {
 
     @RequestMapping("/about")
-    public String helloHtml(HashMap<String, Object> map, Model model) throws IOException {
-        String file = "files/test.md";
+    public String aboutHtml(HashMap<String, Object> map, Model model) throws IOException {
+        String file = "files/about.md";
         MarkdownEntity html = MarkDown2HtmlWrapper.ofFile(file);
-        System.out.println(html.toString());
         model.addAttribute("htmlText", html.toString());
-        map.put("hello", "欢迎进入HTML页面");
         return "index-about";
     }
 
