@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css"/>
+    <style>
+
+        #navbar-category{
+            background-color:  #F2F2F2;
+        }
+
+
+    </style>
+
+    <title>MyBlog 内容分类</title>
 </head>
 <body>
+<div id="navbar-category" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">首页</a></li>
+        <li><a href="/about">关于</a></li>
+        <li><a href="/category">分类</a></li>
+        <li><a href="/archives">历史</a></li>
+    </ul>
+</div>
 
+<script th:inline="javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript"
+        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
