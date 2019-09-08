@@ -6,22 +6,22 @@
           href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" th:href="@{/css/main.css}"
           href="../../css/main.css"/>
+
     <style>
         body {
             padding-top: 52px;
             background-color: #F2F2F2;
         }
 
-        #panel-list {
+        #md-category-page{
             width: 1000px;
-            margin-top: 90px;
-            padding-left: 100px;
-            padding-right: 100px;
+            margin-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
-
     </style>
 
-    <title>MyBlog 内容分类</title>
+    <title>Title</title>
 </head>
 <body>
 
@@ -34,16 +34,8 @@
     </ul>
 </nav>
 
-<div id="panel-list" class="center-block">
-    <div class="panel panel-default" th:each="bean:${beans}">
-        <div class="panel-heading" th:text="${bean.getCategory()}">title</div>
-        <div class="panel-body">
-            <ul th:each="beanChild:${bean.getContentList()}">
-                <li><a th:text="${beanChild.getTitle()}" href="http://localhost:9900/categoryPage"
-                       th:href="@{'http://localhost:9900/categoryPage?child='+${beanChild.getUrl()} + '&parent=' + ${bean.getCategory()}}"></a></li>
-            </ul>
-        </div>
-    </div>
+<div id="md-category-page" class="center-block">
+    <p th:utext="${pageContent}"></p>
 </div>
 
 <script th:inline="javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>

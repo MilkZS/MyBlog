@@ -3,6 +3,7 @@ package com.example.demo.client;
 import com.example.demo.bean.CategoryBean;
 import com.example.demo.bean.CategoryContentBean;
 import com.example.demo.bean.CategoryTitleBean;
+import com.example.demo.impl.MDCategory;
 import com.example.demo.util.MarkDown2HtmlWrapper;
 import com.example.demo.util.MarkdownEntity;
 import org.springframework.stereotype.Controller;
@@ -27,33 +28,16 @@ public class Client {
 
     @RequestMapping("/category")
     public String categoryHtml(HashMap<String, Object> map, Model model) {
-        String file = "files/about.md";
-        List<CategoryBean> beanList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            CategoryBean titleBean = new CategoryBean();
-//            titleBean.setCount(10);
-//            titleBean.setTitle("测试标题");
-            titleBean.setCategory("Android");
-            List<CategoryContentBean> contentBeans = new ArrayList<>();
-            CategoryContentBean categoryContentBean1 = new CategoryContentBean();
-            categoryContentBean1.setTitle("Android 测试");
-            categoryContentBean1.setUrl("test");
-            contentBeans.add(categoryContentBean1);
-            CategoryContentBean categoryContentBean2 = new CategoryContentBean();
-            categoryContentBean2.setTitle("Android 测试2");
-            contentBeans.add(categoryContentBean2);
-            titleBean.setContentList(contentBeans);
-            beanList.add(titleBean);
-        }
-        model.addAttribute("categoryTitle", "Android");
-        model.addAttribute("categoryCount", beanList.size());
+        MDCategory category = new MDCategory();
+        List<CategoryBean> beanList = category.getFile();
         model.addAttribute("beans", beanList);
         return "index-category";
     }
 
     @RequestMapping("/categoryPage")
-    public String doIndexCategoryPage(String name, HashMap<String, Object> map, Model model) throws IOException {
-        String file = "files/" + name + ".md";
+    public String doIndexCategoryPage(String child,String parent, HashMap<String, Object> map, Model model) throws IOException {
+        String file = "files/" + parent + "/" + child;
+        System.out.println("receive file = " + file);
         MarkdownEntity html = MarkDown2HtmlWrapper.ofFile(file);
         model.addAttribute("pageContent",html);
         return "index-category-page";
