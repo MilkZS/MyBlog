@@ -1,8 +1,7 @@
 package com.example.demo.client;
 
 import com.example.demo.bean.CategoryBean;
-import com.example.demo.bean.CategoryContentBean;
-import com.example.demo.bean.CategoryTitleBean;
+import com.example.demo.bean.SearchBean;
 import com.example.demo.impl.MDCategory;
 import com.example.demo.util.MarkDown2HtmlWrapper;
 import com.example.demo.util.MarkdownEntity;
@@ -11,15 +10,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 @Controller
-public class Client {
+public class ReadClient {
 
     @RequestMapping("/home")
     public String doIndex(HashMap<String, Object> map, Model model){
+        SearchBean searchBean = new SearchBean();
+        searchBean.setArticle("测试");
+        model.addAttribute("searchBean",searchBean);
         return "index";
     }
 
