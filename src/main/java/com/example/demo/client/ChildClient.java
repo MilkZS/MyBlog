@@ -14,8 +14,7 @@ public class ChildClient {
     @RequestMapping(value="/search",method= RequestMethod.POST)
     public String doSearch(@ModelAttribute SearchBean bean){
         System.out.println("search article = " + bean.getArticle());
-
-        return "";
+        return "还在搭建中";
     }
 
 }

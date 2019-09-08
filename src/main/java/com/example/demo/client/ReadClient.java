@@ -19,7 +19,7 @@ public class ReadClient {
     @RequestMapping("/home")
     public String doIndex(HashMap<String, Object> map, Model model){
         SearchBean searchBean = new SearchBean();
-        searchBean.setArticle("测试");
+        searchBean.setArticle("Search for...");
         model.addAttribute("searchBean",searchBean);
         return "index";
     }
