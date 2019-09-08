@@ -43,8 +43,8 @@ public class UserController {
         return new ModelAndView("/index-archives");
     }
 
-    @RequestMapping("/category")
-    public ModelAndView doCategory(){
-        return new ModelAndView("/index-category");
-    }
+//    @RequestMapping("/category")
+//    public ModelAndView doCategory(){
+//        return new ModelAndView("/index-category");
+//    }
 }

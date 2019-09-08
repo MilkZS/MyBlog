@@ -9,7 +9,14 @@
     <style>
         body {
             padding-top: 52px;
-            background-color:  #F2F2F2;
+            background-color: #F2F2F2;
+        }
+
+        #panel-list {
+            width: 1000px;
+            margin-top: 90px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
     </style>
@@ -18,13 +25,24 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <a href="#" class="navbar-brand">www.<strong>milkz</strong>.com</a>
     <ul class="nav navbar-nav">
+        <li><a href="#" class="navbar-brand">www.<strong>milkz</strong>.com</a></li>
         <li><a href="/">首页</a></li>
         <li><a href="/about">关于</a></li>
         <li class="active"><a href="/category">分类</a></li>
     </ul>
 </nav>
+
+<div id="panel-list" class="center-block">
+    <div class="panel panel-default" th:each="bean:${beans}">
+        <div class="panel-heading" th:text="${bean.getCategory()}">title</div>
+        <div class="panel-body">
+            <ul th:each="beanChild:${bean.getContentList()}">
+                <li><a th:text="${beanChild.getTitle()}" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <script th:inline="javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript"
