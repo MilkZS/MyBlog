@@ -6,6 +6,6 @@ import lombok.Data;
 public class CategoryContentBean {
 
     private String title;
-
+    private String url;
 
 }

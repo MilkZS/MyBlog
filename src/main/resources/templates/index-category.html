@@ -24,6 +24,7 @@
     <title>MyBlog 内容分类</title>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <ul class="nav navbar-nav">
         <li><a href="#" class="navbar-brand">www.<strong>milkz</strong>.com</a></li>
@@ -38,7 +39,8 @@
         <div class="panel-heading" th:text="${bean.getCategory()}">title</div>
         <div class="panel-body">
             <ul th:each="beanChild:${bean.getContentList()}">
-                <li><a th:text="${beanChild.getTitle()}" href="#"></a></li>
+                <li><a th:text="${beanChild.getTitle()}" href="http://localhost:9900/categoryPage"
+                       th:href="@{'http://localhost:9900/categoryPage?name='+${beanChild.getUrl()}}"></a></li>
             </ul>
         </div>
     </div>

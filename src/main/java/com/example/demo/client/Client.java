@@ -37,6 +37,7 @@ public class Client {
             List<CategoryContentBean> contentBeans = new ArrayList<>();
             CategoryContentBean categoryContentBean1 = new CategoryContentBean();
             categoryContentBean1.setTitle("Android 测试");
+            categoryContentBean1.setUrl("test");
             contentBeans.add(categoryContentBean1);
             CategoryContentBean categoryContentBean2 = new CategoryContentBean();
             categoryContentBean2.setTitle("Android 测试2");
@@ -44,10 +45,39 @@ public class Client {
             titleBean.setContentList(contentBeans);
             beanList.add(titleBean);
         }
-        model.addAttribute("categoryTitle","Android");
-        model.addAttribute("categoryCount",beanList.size());
-        model.addAttribute("beans",beanList);
+        model.addAttribute("categoryTitle", "Android");
+        model.addAttribute("categoryCount", beanList.size());
+        model.addAttribute("beans", beanList);
         return "index-category";
     }
 
+    @RequestMapping("/categoryPage")
+    public String doIndexCategoryPage(String name, HashMap<String, Object> map, Model model) throws IOException {
+        String file = "files/" + name + ".md";
+        MarkdownEntity html = MarkDown2HtmlWrapper.ofFile(file);
+        model.addAttribute("pageContent",html);
+        return "index-category-page";
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
