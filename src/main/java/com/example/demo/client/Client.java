@@ -18,6 +18,11 @@ import java.util.List;
 @Controller
 public class Client {
 
+    @RequestMapping("/home")
+    public String doIndex(HashMap<String, Object> map, Model model){
+        return "index";
+    }
+
     @RequestMapping("/about")
     public String aboutHtml(HashMap<String, Object> map, Model model) throws IOException {
         String file = "files/about.md";
@@ -28,8 +33,10 @@ public class Client {
 
     @RequestMapping("/category")
     public String categoryHtml(HashMap<String, Object> map, Model model) {
+//        String path = "G:\\Github\\blog\\MyBlog\\src\\main\\resources\\files";
+        String path = "/root/blog/mdFiles";
         MDCategory category = new MDCategory();
-        List<CategoryBean> beanList = category.getFile();
+        List<CategoryBean> beanList = category.getFile(path);
         model.addAttribute("beans", beanList);
         return "index-category";
     }

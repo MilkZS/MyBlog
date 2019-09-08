@@ -9,21 +9,19 @@ import java.util.List;
 
 public class MDCategory {
 
-    public List<CategoryBean> getFile() {
+    public List<CategoryBean> getFile(String path) {
         List<CategoryBean> categoryBeans = new ArrayList<>();
 
-        File file = new File("G:\\Github\\blog\\MyBlog\\src\\main\\resources\\files");
+        File file = new File(path);
         if (!file.exists()) {
             return categoryBeans;
         }
 
         String[] files = file.list();
         if (files == null || files.length == 0) return categoryBeans;
-
-        System.out.println("size = " + files.length);
-
+        System.out.println("files = " + files.length);
         for (String f : files) {
-            System.out.println("file name = " + f);
+            System.out.println("1 f = " + f);
             File fChild = new File(file.getPath(), f);
             if (fChild.isDirectory()){
                 CategoryBean bean = new CategoryBean();
@@ -47,6 +45,7 @@ public class MDCategory {
         if (files == null || files.length == 0) return contentBeans;
 
         for (String f:files) {
+            System.out.println("2 f = " + f);
             File fChild = new File(file.getPath(),f);
             if (fChild.isFile()){
                 CategoryContentBean contentBean = new CategoryContentBean();

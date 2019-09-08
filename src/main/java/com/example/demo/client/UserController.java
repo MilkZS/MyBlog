@@ -14,11 +14,6 @@ import java.util.HashMap;
 @RestController
 public class UserController {
 
-    @RequestMapping("/")
-    public ModelAndView doIndex(){
-        return new ModelAndView("/index");
-    }
-
     @RequestMapping("/archives")
     public ModelAndView doArchives(){
         return new ModelAndView("/index-archives");

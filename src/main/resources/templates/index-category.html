@@ -40,7 +40,7 @@
         <div class="panel-body">
             <ul th:each="beanChild:${bean.getContentList()}">
                 <li><a th:text="${beanChild.getTitle()}" href="http://localhost:9900/categoryPage"
-                       th:href="@{'http://localhost:9900/categoryPage?child='+${beanChild.getUrl()} + '&parent=' + ${bean.getCategory()}}"></a></li>
+                       th:href="@{'http://47.98.217.144:9900/categoryPage?child='+${beanChild.getUrl()} + '&parent=' + ${bean.getCategory()}}"></a></li>
             </ul>
         </div>
     </div>
