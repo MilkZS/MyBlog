@@ -13,7 +13,7 @@
 
 ### 学历
 
-&ensp;&ensp;&ensp;&ensp;CET 6
+&ensp;&ensp;&ensp;&ensp;CET 4
 
 &ensp;&ensp;&ensp;&ensp;本科就读于中南大学 &ensp;&ensp;[2013-09 -- 2017-06]
 
@@ -36,7 +36,7 @@
 
 &ensp;&ensp;&ensp;&ensp;工作方向：Android NFC和GPS 研发
 
-- 2018-10&ensp;-&ensp;至今
+- 2018-10&ensp;-&ensp;至今&ensp;&ensp;&ensp;&ensp;北京华大智宝
 
 &ensp;&ensp;&ensp;&ensp;工作方向：Android SDK研发，Java后台研发
 

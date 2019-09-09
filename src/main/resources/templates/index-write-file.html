@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css"/>
+
+    <meta charset="UTF-8">
+
+    <style>
+        #article-text-area{
+            height: 800px;
+        }
+    </style>
+
+    <title>Blog Write</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-1">
+        <textarea id="article-text-area" class="center-block">test</textarea>
+    </div>
+    <div class="col-lg-4 col-lg-offset-1">
+        <p>test</p>
+    </div>
+</div>
+
+<script th:inline="javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript"
+        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
